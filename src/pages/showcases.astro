@@ -56,7 +56,7 @@ console.log('✅ Ready to render showcases');
             </div>
             
             <h2 class="text-xl font-bold mb-3 hover:text-blue-400 transition-colors">
-              <a href={`/showcases/${showcase.id}`}>
+              <a href={`/showcases/${showcase.id.replace('.md', '')}`}>
                 {showcase.data.title}
               </a>
             </h2>
@@ -76,7 +76,7 @@ console.log('✅ Ready to render showcases');
             )}
             
             <a 
-              href={`/showcases/${showcase.id}`}
+              href={`/showcases/${showcase.id.replace('.md', '')}`}
               class="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
             >
               اقرأ المزيد

@@ -5,7 +5,7 @@ import ShowcaseLayout from '../../layouts/ShowcaseLayout.astro';
 export async function getStaticPaths() {
   const showcases = await getCollection('showcases');
   return showcases.map(showcase => ({
-    params: { id: showcase.id },
+    params: { id: showcase.id.replace('.md', '') },
     props: { showcase },
   }));
 }
