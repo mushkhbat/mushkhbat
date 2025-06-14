@@ -92,4 +92,7 @@
     margin: 1.5rem auto;
     border-radius: 0.5rem;
   }
+  .prose h1:first-of-type {
+    line-height: calc(100% + 0.85rem) !important;
+  }
 }
