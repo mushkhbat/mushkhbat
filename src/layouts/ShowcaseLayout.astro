@@ -53,12 +53,6 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site);
 		<meta property="twitter:image:alt" content={imageAlt} />
 		<meta property="twitter:site" content="@mushkhbat" />
 		
-		<!-- Favicon -->
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-		
 		<!-- Additional Meta -->
 		<meta name="theme-color" content="#000000" />
 		<meta name="author" content="مشخبط" />
@@ -91,13 +85,15 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site);
 	<body
 		class="bg-black text-white font-janna antialiased"
 	>
-		<header class="flex justify-center p-4 md:p-6 container mx-auto">
-			<a href="/" class="w-24 md:w-32">
-				<img src="/mushkhbat-logo.svg" alt="مشخبط" />
-			</a>
-			<nav class="flex-1 flex justify-end items-center">
-				<a href="/showcases" class="mx-2 hover:text-gray-200">أعمالنا</a>
-			</nav>
+		<header class="sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800/50 flex justify-center p-4 md:p-6">
+			<div class="container mx-auto flex items-center">
+				<a href="/" class="w-16 md:w-20">
+					<img src="/mushkhbat-logo.svg" alt="مشخبط" />
+				</a>
+				<nav class="flex-1 flex justify-end items-center">
+					<a href="/showcases" class="mx-2 hover:text-gray-200 transition-colors">أعمالنا</a>
+				</nav>
+			</div>
 		</header>
 
 		<main class="py-8">
