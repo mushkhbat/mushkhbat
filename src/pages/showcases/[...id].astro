@@ -14,7 +14,14 @@ const { showcase } = Astro.props;
 const { Content } = await render(showcase);
 ---
 
-<ShowcaseLayout>
+<ShowcaseLayout
+  title={`${showcase.data.title} | مشخبط`}
+  description={showcase.data.description}
+  image={showcase.data.image || "/mushkhbat-og-image.jpg"}
+  imageAlt={showcase.data.title}
+  publishDate={new Date(showcase.data.publishDate).toISOString()}
+  tags={showcase.data.tags || []}
+>
   <div class="mb-8">
     <div class="flex items-center justify-between mb-4">
       <time class="text-gray-400">

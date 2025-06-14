@@ -3,16 +3,74 @@ import "../styles/global.css";
 // import ThemeSwitcher from "../components/ThemeSwitcher.astro"; --- REMOVED
 ---
 
+export interface Props {
+	title?: string;
+	description?: string;
+	image?: string;
+	imageAlt?: string;
+	canonical?: string;
+	noindex?: boolean;
+	type?: string;
+}
+
+const {
+	title = "مشخبط",
+	description = "وكالة مشخبط - نجمع بين الفن والتكنولوجيا لنقدم لكم تجارب رقمية فريدة ومبتكرة",
+	image = "/mushkhbat-og-image.jpg",
+	imageAlt = "مشخبط - وكالة الحلول الرقمية",
+	canonical,
+	noindex = false,
+	type = "website"
+} = Astro.props;
+
+const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site);
+---
+
 <!doctype html>
 <html lang="ar" dir="rtl" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="وكالة مشخبط" />
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
 		<meta name="generator" content={Astro.generator} />
-		<title>مشخبط</title>
-		<!-- Theme switcher script REMOVED -->
+		
+		<!-- Title -->
+		<title>{title}</title>
+		
+		<!-- Canonical URL -->
+		<link rel="canonical" href={canonicalURL} />
+		
+		<!-- Robots Meta -->
+		{noindex && <meta name="robots" content="noindex, nofollow" />}
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content={type} />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(image, Astro.site)} />
+		<meta property="og:image:alt" content={imageAlt} />
+		<meta property="og:locale" content="ar_SA" />
+		<meta property="og:site_name" content="مشخبط" />
+		
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={canonicalURL} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={new URL(image, Astro.site)} />
+		<meta property="twitter:image:alt" content={imageAlt} />
+		<meta property="twitter:site" content="@mushkhbat" />
+		
+		<!-- Favicon -->
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		
+		<!-- Additional Meta -->
+		<meta name="theme-color" content="#000000" />
+		<meta name="author" content="مشخبط" />
 	</head>
 	<body
 		class="bg-black text-white font-janna antialiased"
