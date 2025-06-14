@@ -1,5 +1,10 @@
 @import "tailwindcss";
-
+/*
+  Tailwind CSS v4 CSS-first Plugin Definition
+  Import the plugin at the top of your CSS file.
+  The plugin must be imported before any other CSS rules.
+*/
+@plugin "@tailwindcss/typography";
 /*
   Tailwind CSS v4 CSS-first Font Definition
   Define custom font families as CSS variables inside the @theme directive.
@@ -55,4 +60,36 @@
   font-weight: 900;
   font-style: normal;
   font-display: swap;
+}
+@layer base {
+    
+  /* Line clamp utility */
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+
+  /* Force code blocks to LTR with unicode isolation */
+  pre, code, .prose pre, .prose code {
+    direction: ltr !important;
+    text-align: left !important;
+    unicode-bidi: isolate !important;
+    font-family: 'Courier New', Consolas, 'Liberation Mono', Menlo, Courier, monospace !important;
+  }
+
+  /* Ensure code blocks maintain LTR even in RTL context */
+  .prose pre code {
+    direction: ltr !important;
+    unicode-bidi: isolate !important;
+  }
+
+  /* Limit image width in showcase posts */
+  .prose img {
+    max-width: 570px !important;
+    height: auto;
+    margin: 1.5rem auto;
+    border-radius: 0.5rem;
+  }
 }

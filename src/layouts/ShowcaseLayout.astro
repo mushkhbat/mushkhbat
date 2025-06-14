@@ -1,6 +1,5 @@
 ---
 import "../styles/global.css";
-// import ThemeSwitcher from "../components/ThemeSwitcher.astro"; --- REMOVED
 ---
 
 <!doctype html>
@@ -9,10 +8,8 @@ import "../styles/global.css";
 		<meta charset="UTF-8" />
 		<meta name="description" content="وكالة مشخبط" />
 		<meta name="viewport" content="width=device-width" />
-		<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
 		<meta name="generator" content={Astro.generator} />
 		<title>مشخبط</title>
-		<!-- Theme switcher script REMOVED -->
 	</head>
 	<body
 		class="bg-black text-white font-janna antialiased"
@@ -26,9 +23,11 @@ import "../styles/global.css";
 			</nav>
 		</header>
 
-		<main class="py-16">
-			<slot />
-		</main>
+		<main class="py-8">
+      <article class="prose prose-invert prose-lg mx-auto px-4 md:px-8 lg:px-12">
+        <slot />
+      </article>
+    </main>
 
 		<footer class="text-center p-8 text-gray-400">
 			<div class="mb-4">
@@ -40,4 +39,4 @@ import "../styles/global.css";
 			<p>© وكالة مشخبط ٢٠٢٢ - ٢٠٢٥.</p>
 		</footer>
 	</body>
-</html>
+</html> 

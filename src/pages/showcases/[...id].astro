@@ -1,0 +1,72 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import ShowcaseLayout from '../../layouts/ShowcaseLayout.astro';
+
+export async function getStaticPaths() {
+  const showcases = await getCollection('showcases');
+  return showcases.map(showcase => ({
+    params: { id: showcase.id },
+    props: { showcase },
+  }));
+}
+
+const { showcase } = Astro.props;
+const { Content } = await render(showcase);
+---
+
+<ShowcaseLayout>
+  <div class="mb-8">
+    <div class="flex items-center justify-between mb-4">
+      <time class="text-gray-400">
+        {new Date(showcase.data.publishDate).toLocaleDateString('ar-SA', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        })}
+      </time>
+      {showcase.data.featured && (
+        <span class="bg-blue-600 text-white text-sm px-3 py-1 rounded-full">
+          مميز
+        </span>
+      )}
+    </div>
+    
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">{showcase.data.title}</h1>
+    
+    <p class="text-xl text-gray-300 mb-6">{showcase.data.description}</p>
+    
+    {showcase.data.tags && (
+      <div class="flex flex-wrap gap-2 mb-8">
+        {showcase.data.tags.map((tag: string) => (
+          <span class="bg-gray-800 text-gray-300 px-3 py-1 rounded-full">
+            {tag}
+          </span>
+        ))}
+      </div>
+    )}
+    
+    {showcase.data.image && (
+      <div class="mb-8">
+        <img 
+          src={showcase.data.image} 
+          alt={showcase.data.title}
+          class="w-full rounded-lg shadow-lg"
+        />
+      </div>
+    )}
+  </div>
+  
+  <Content />
+  
+  <div class="mt-12 pt-8 border-t border-gray-800">
+    <a 
+      href="/showcases"
+      class="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
+    >
+      <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+      </svg>
+      العودة إلى الأعمال
+    </a>
+  </div>
+</ShowcaseLayout> 
