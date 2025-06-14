@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+/*
+  Tailwind CSS v4 CSS-first Font Definition
+  Define custom font families as CSS variables inside the @theme directive.
+  Tailwind automatically creates corresponding utility classes (e.g., .font-janna).
+*/
+@theme {
+  --font-janna: "janna", sans-serif;
+}
+
+@font-face {
+  font-family: "janna";
+  src: url("/fonts/Janna2-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "janna";
+  src: url("/fonts/Janna2-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "janna";
+  src: url("/fonts/Janna2-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "janna";
+  src: url("/fonts/Janna2-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "janna";
+  src: url("/fonts/Janna2-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "janna";
+  src: url("/fonts/Janna2-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}

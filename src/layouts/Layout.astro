@@ -1,22 +1,39 @@
+---
+import "../styles/global.css";
+// import ThemeSwitcher from "../components/ThemeSwitcher.astro"; --- REMOVED
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="ar" dir="rtl" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="description" content="وكالة مشخبط الإبداعية" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>مشخبط</title>
+		<!-- Theme switcher script REMOVED -->
 	</head>
-	<body>
+	<body
+		class="bg-black text-white font-janna antialiased"
+	>
+		<header class="flex justify-center p-4 md:p-6 container mx-auto">
+			<a href="/" class="w-24 md:w-32">
+				<img src="/mushkhbat-logo.svg" alt="مشخبط" />
+			</a>
+			<!-- ThemeSwitcher REMOVED -->
+		</header>
+
 		<slot />
+
+		<footer class="text-center p-8 text-gray-400">
+			<div class="mb-4">
+				<a href="#" class="mx-2 hover:text-gray-200">آخر التدوينات</a>
+				<a href="#" class="mx-2 hover:text-gray-200">تويتر</a>
+				<a href="#" class="mx-2 hover:text-gray-200">غيت هب</a>
+				<a href="#" class="mx-2 hover:text-gray-200">انستاغرام</a>
+			</div>
+			<p>© وكالة مشخبط الإبداعية 2022 - 2025.</p>
+		</footer>
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
