@@ -60,7 +60,7 @@ console.log('✅ Ready to render showcases');
                 })}
               </time>
               {showcase.data.featured && (
-                <span class="bg-gradient-to-r from-violet-500 to-violet-400 text-white text-xs px-3 py-1 rounded-full shadow-lg font-semibold">
+                <span class="featured-badge">
                   مميز
                 </span>
               )}
@@ -79,7 +79,7 @@ console.log('✅ Ready to render showcases');
             {showcase.data.tags && (
               <div class="flex flex-wrap gap-2 mb-4">
                 {showcase.data.tags.map((tag) => (
-                  <span class="bg-violet-700/60 text-violet-50 text-xs px-3 py-1 rounded-lg border border-violet-600/40 font-medium">
+                  <span class="tag-base">
                     {tag}
                   </span>
                 ))}
