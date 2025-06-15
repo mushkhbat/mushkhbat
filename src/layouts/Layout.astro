@@ -52,19 +52,19 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site);
 		<meta property="twitter:site" content="@mushkhbat" />
 		
 		<!-- Additional Meta -->
-		<meta name="theme-color" content="#000000" />
+		<meta name="theme-color" content="#160727" />
 		<meta name="author" content="مشخبط" />
 	</head>
 	<body
-		class="bg-black text-white font-janna antialiased"
+		class="bg-gradient-to-br from-violet-950 via-violet-900 to-violet-800 text-violet-50 font-janna antialiased min-h-screen"
 	>
-		<header class="sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800/50 flex justify-center p-4 md:p-6">
+		<header class="sticky top-0 z-50 bg-violet-950/80 backdrop-blur-md border-b border-violet-700/50 flex justify-center p-4 md:p-6">
 			<div class="container mx-auto flex items-center">
-				<a href="/" class="w-16 md:w-20">
+				<a href="/" class="w-16 md:w-20 hover:scale-105 transition-transform">
 					<img src="/mushkhbat-logo.svg" alt="مشخبط" />
 				</a>
 				<nav class="flex-1 flex justify-end items-center">
-					<a href="/showcases" class="mx-2 hover:text-gray-200 transition-colors">أعمالنا</a>
+					<a href="/showcases" class="mx-2 hover:text-white transition-colors font-medium">أعمالنا</a>
 				</nav>
 			</div>
 		</header>
@@ -73,12 +73,12 @@ const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site);
 			<slot />
 		</main>
 
-		<footer class="text-center p-8 text-gray-400">
+		<footer class="text-center p-8 text-violet-50 bg-violet-950/50 backdrop-blur-sm border-t border-violet-800/50">
 			<div class="mb-4">
-				<a href="/rss.xml" class="mx-2 hover:text-gray-200">آخر التدوينات</a>
-				<a href="https://twitter.com/mushkhbat" target="_blank" class="mx-2 hover:text-gray-200">تويتر</a>
-				<a href="https://github.com/mushkhbat" target="_blank" class="mx-2 hover:text-gray-200">غيت هب</a>
-				<a href="https://instagram.com/mushkhbat" target="_blank" class="mx-2 hover:text-gray-200">انستاغرام</a>
+				<a href="/rss.xml" class="mx-2 hover:text-white transition-colors">آخر التدوينات</a>
+				<a href="https://twitter.com/mushkhbat" target="_blank" class="mx-2 hover:text-white transition-colors">تويتر</a>
+				<a href="https://github.com/mushkhbat" target="_blank" class="mx-2 hover:text-white transition-colors">غيت هب</a>
+				<a href="https://instagram.com/mushkhbat" target="_blank" class="mx-2 hover:text-white transition-colors">انستاغرام</a>
 			</div>
 			<p>© وكالة مشخبط ٢٠٢٢ - ٢٠٢٥.</p>
 		</footer>
